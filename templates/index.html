@@ -1,0 +1,52 @@
+<!-- front end page -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Life Solution Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+
+  <body
+
+  >
+    <div class="header" 
+    >
+      <img class ="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIcwIp52HkWEOMPt9FJNPFcjwXWvEzpzMig&usqp=CAU" alt="W3Schools.com">
+      <h1><span>E-life Solution For</span>  diseases Predition</h1>
+    </div>
+
+
+
+    <div class="wrapper">
+      <img
+        src="{% if image_url %}{{ image_url }}{% else %}{% static 'images/default.png' %}{% endif %}"
+        alt="Compressed Image"
+        width="400px"
+      />
+
+      <div class="info_container">
+        <ul>
+          <li>Name: <span class="name">{{ image.name }}</span></li>
+          <li>Prediction: <span class="type">{{ prediction }}</span></li>
+          <li>Accuracy: <span class="type">{{ accuracy }}%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header">
+      <h4><span>ELIFE Solutions</span>cooperations</h4>
+      <div class="coop">
+        <img class= "cooperations" src="https://upload.wikimedia.org/wikipedia/commons/8/81/UTM-LOGO.png" alt="utm logo"/>
+        <img class= "cooperations" src="{%static 'images/ELS.png'%}" alt="utm logo"/>
+        <img class= "cooperations" src="data:image/png;base64,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" alt="utm logo"/>
+      </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
